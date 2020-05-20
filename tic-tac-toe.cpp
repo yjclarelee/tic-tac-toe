@@ -38,18 +38,18 @@ void print_board(){
 void get_input(int user){
   if(!user){
     std::cout << "Please input the x coordinate for user 0: ";
-    user0_x = getchar();
+    user0_x = getchar()-48;
     getchar();
     std::cout << "Please input the y coordinate for user 0: ";
-    user0_y = getchar();
+    user0_y = getchar()-48;
     getchar(); 
   }
   else{
     std::cout << "Please input the x coordinate for user 1: ";
-    user0_x = getchar();
+    user1_x = getchar()-48;
     getchar();
     std::cout << "Please input the y coordinate for user 1: ";
-    user0_y = getchar();
+    user1_y = getchar()-48;
     getchar(); 
   }
 }
@@ -64,12 +64,12 @@ void save_input(){
 bool check_tick_tac_toe(){
   //for vertical cases
   for(int i = 0; i < 3; i++){
-    if((array[i][0] == array[i][1]) && (array[i][1] == array[i][2]))
+    if((array[i][0] == array[i][1]) && (array[i][1] == array[i][2]) && (array[i][0]!= NULL)) 
       return true;
   }
   //for horizontal cases
   for(int j = 0; j < 3; j++){
-    if((array[0][j] == array[1][j]) && (array[1][j] == array[2][j]))
+    if((array[0][j] == array[1][j]) && (array[1][j] == array[2][j]) && (array[0][j]!= NULL))
       return true;
   }
   //for diagnal cases
