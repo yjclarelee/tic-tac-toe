@@ -3,9 +3,10 @@
 #include <cstring>
 
 int user0_x, user0_y, user1_x, user1_y = -1;
-char array[3][3] = {NULL};
+char array[3][3];
 int user = 0;
 
+void init_array();
 void get_input(int user);
 void save_input();
 bool check_tick_tac_toe();
@@ -13,6 +14,7 @@ void print_board();
 void result_message();
 
 int main(){
+  init_array();
   while(1){
     print_board();
     get_input(user);
@@ -23,6 +25,13 @@ int main(){
   }
   print_board();
   result_message();
+}
+
+void init_array(){
+  for(int i = 0; i < 3; i++){
+    for(int j = 0; j < 3; j++)
+      array[i][j] = ' ';
+  }
 }
 
 void print_board(){
@@ -64,12 +73,12 @@ void save_input(){
 bool check_tick_tac_toe(){
   //for vertical cases
   for(int i = 0; i < 3; i++){
-    if((array[i][0] == array[i][1]) && (array[i][1] == array[i][2]) && (array[i][0]!= NULL)) 
+    if((array[i][0] == array[i][1]) && (array[i][1] == array[i][2]) && (array[i][0]!=' ')) 
       return true;
   }
   //for horizontal cases
   for(int j = 0; j < 3; j++){
-    if((array[0][j] == array[1][j]) && (array[1][j] == array[2][j]) && (array[0][j]!= NULL))
+    if((array[0][j] == array[1][j]) && (array[1][j] == array[2][j]) && (array[0][j]!=' '))
       return true;
   }
   //for diagnal cases
