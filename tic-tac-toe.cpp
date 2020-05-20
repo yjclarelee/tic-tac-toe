@@ -59,7 +59,7 @@ int main(){
 bool check_tick_tac_toe(){
   //for vertical cases
   for(int i = 0; i < 3; i++){
-    if((array[i][0] == array[i][1]) && (array[i][1] == array[i][2])
+    if((array[i][0] == array[i][1]) && (array[i][1] == array[i][2]))
       return true;
   }
   //for horizontal cases
@@ -70,7 +70,7 @@ bool check_tick_tac_toe(){
   //for diagnal cases
   if((array[0][0] == array[1][1]) && (array[1][1] == array[2][2]))
     return true;
-  if(array[0][2] == array[1][1] == array[2][0])
+  if((array[0][2] == array[1][1]) && (array[1][1] == array[2][0]))
     return true;
 
   return false;
