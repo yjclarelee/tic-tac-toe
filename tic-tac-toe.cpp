@@ -59,18 +59,17 @@ int main(){
 bool check_tick_tac_toe(){
   //for vertical cases
   for(int i = 0; i < 3; i++){
-    if((strcmp(array[i][0],array[i][1]) == 0) && (strcmp(array[i][1], array[i][2]) == 0))
+    if((array[i][0] == array[i][1]) && (array[i][1] == array[i][2])
       return true;
   }
   //for horizontal cases
   for(int j = 0; j < 3; j++){
-    if((strcmp(array[0][j],array[1][j]) == 0) && (strcmp(array[1][j], array[2][j]) == 0))
+    if((array[0][j] == array[1][j]) && (array[1][j] == array[2][j]))
       return true;
   }
   //for diagnal cases
-  if((strcmp(array[0][0],array[1][1]) == 0) && (strcmp(array[1][1], array[2][2]) == 0))
+  if((array[0][0] == array[1][1]) && (array[1][1] == array[2][2]))
     return true;
-  if((strcmp(array[0][2],array[1][1]) == 0) && (strcmp(array[1][1], array[2][0]) == 0))
   if(array[0][2] == array[1][1] == array[2][0])
     return true;
 
